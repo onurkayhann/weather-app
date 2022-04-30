@@ -1,23 +1,59 @@
+import "./App.css";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import './App.css';
+import Weather from "./components/Weather";
 
 const baseUrl = `https://api.openweathermap.org/data/2.5/onecall?`;
 const apiKey = process.env.REACT_APP_API_KEY;
 
 function App() {
-  const [weatherData, setWeatherData] = useState('');
-  const [value, setValue] = useState("metric");
+  const [weatherData, setweatherData] = useState(null);
+  const [type, setType] = useState("metric");
+  const [error, setError] = useState("");
 
-  const fahrenheit = (e) => {
-    setValue("imperial");
+  const imperial = (e) => {
+    setType("imperial");
   };
-  const celsius = (e) => {
-    setValue("metric");
+  const metric = (e) => {
+    setType("metric");
   };
 
+  async function getLocation() {
+    try {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        let apiUrl = `${baseUrl}lat=${latitude}&lon=${longitude}&units=${type}&appid=${apiKey}`;
+        weatherPosition(apiUrl);
+      });
+    } catch {
+      setError("Something went wrong.");
+    }
+  }
+
+  async function weatherPosition(url) {
+    try {
+      const response = await axios.get(url);
+      setweatherData(response.data);
+    } catch (error) {
+      setError("Something went wrong.");
+    }
+  }
+
+  // runs on init
+  useEffect(() => {
+    getLocation();
+  }, [type]);
 
   return (
     <div className="App">
+      {weatherData && (
+        <Weather
+          metric={metric}
+          imperial={imperial}
+          weatherData={weatherData}
+        />
+      )}
     </div>
   );
 }
