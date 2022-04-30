@@ -21,8 +21,9 @@ function App() {
   async function getLocation() {
     try {
       navigator.geolocation.getCurrentPosition((position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+        // const latitude = position.coords.latitude;
+        // const longitude = position.coords.longitude;
+        const { latitude, longitude } = position.coords;
         let apiUrl = `${baseUrl}lat=${latitude}&lon=${longitude}&units=${type}&appid=${apiKey}`;
         weatherPosition(apiUrl);
       });
