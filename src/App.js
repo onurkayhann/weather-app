@@ -40,7 +40,6 @@ function App() {
     }
   }
 
-  // runs on init
   useEffect(() => {
     getLocation();
   }, [type]);
