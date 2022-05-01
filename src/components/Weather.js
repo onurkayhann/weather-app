@@ -11,7 +11,7 @@ function Weather({weatherData, imperial, metric}) {
         hourly.push(<div key={get}><p>{new Date(temp.dt * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
         <img src={`http://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`}></img>
         <p>{temp.weather[0].main}</p>
-        <p>{temp.temp.toFixed()}°</p>
+        <p>{Math.round(temp.temp)}°</p>
         </div>)
       } else {
         console.log('Something went wrong.');
@@ -38,7 +38,7 @@ function Weather({weatherData, imperial, metric}) {
     <div className="weatherCard">
     <p>{weatherData.timezone}</p>
     
-    {weatherData.current ? <h1>{weatherData.current.temp.toFixed()}°</h1> : null}
+    {weatherData.current ? <h1>{Math.round(weatherData.current.temp)}°</h1> : null}
     {weatherData.current &&
       <p>{weatherData.current.weather[0].main}</p>}
       {weatherData.current && <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`}></img>}
@@ -52,9 +52,9 @@ function Weather({weatherData, imperial, metric}) {
           <div className="section-1">
 
             <div>
-            <p>Feels like</p>
+            <p>Pressure</p>
               {weatherData.current ? (
-                <p>{weatherData.current.feels_like.toFixed()}°</p>
+                <p>{Math.round(weatherData.current.pressure)}°</p>
               ) : null} 
             </div>
 
@@ -66,7 +66,7 @@ function Weather({weatherData, imperial, metric}) {
             <div>
             <p>Wind Speed</p>
               {weatherData.current ? (
-                <p>{weatherData.current.wind_speed.toFixed()} M/S</p>
+                <p>{Math.round(weatherData.current.wind_speed)} M/S</p>
               ) : null}
             </div>
             <div>
