@@ -31,6 +31,7 @@ function Weather({weatherData, imperial, metric}) {
 
     <div className="buttonContainer">
       <button className="convertButton" onClick={metric}>Celsius</button>
+      <p>&#x2190;Weather App</p>
         <button className="convertButton" onClick={imperial}>Fahrenheit</button>
       </div>
     
@@ -81,7 +82,7 @@ function Weather({weatherData, imperial, metric}) {
           
         )}
             
-            <div>
+            <div className="getHour">
               {weatherData.hourly && getHour()}
             </div>
           {weatherData && <LiveWeather weatherData={weatherData} />}

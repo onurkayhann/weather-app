@@ -1,14 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap");
 @import "bootstrap/";
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  color: whitesmoke;
+  color: #fff;
   font-family: "Recursive", sans-serif;
-  background: url("./assets/weather-app.jpg");
+  /* background: url("./assets/weather-app.jpg"); */
+  background: #43AFFC;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   overflow-y: scroll;
+}
+
+.app {
+  justify-content: space-evenly;
 }
 
 .weatherCard {
@@ -19,7 +30,10 @@ body {
   margin: 5px auto;
   margin-top: 10px;
   border: 1px solid;
-  border-radius: 2px;
+  color: #000;
+  background: #fff;
+   border: 2px solid #bfbfbf;
+  border-radius: 3px;
 }
 
 .section-1 {
@@ -28,23 +42,58 @@ body {
   justify-content: space-evenly;
   width: 50%;
   margin: 5px auto;
+  margin-top: 40px;
+  color: #000;
+  background: #fff;
+   border: 2px solid #bfbfbf;
+  border-radius: 3px;
+}
+
+.getHour {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 5px auto;
+  margin-top: 40px;
+  color: #000;
+  background: #fff;
   margin-top: 10px;
-  border: 1px solid;
-  border-radius: 2px;
+   border: 2px solid #bfbfbf;
+  border-radius: 3px;
+}
+
+.getDaily {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 5px auto;
+  margin-top: 40px;
+  color: #000;
+  background: #fff;
+  margin-top: 10px;
+   border: 2px solid #bfbfbf;
+  border-radius: 3px;
 }
 
 .buttonContainer {
+  color: #43AFFC;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   width: 30%;
   margin: 5px auto;
-  margin-top: 10px;
-  border: 1px solid;
-  border-radius: 2px;
+  margin-top: 40px;
+  border: 2px solid #bfbfbf;
+  border-radius: 3px;
 }
 
 .convertButton {
-
+  color: #fff;
+background-color: #43AFFC;
+cursor: pointer;
+padding: 4px;
 }
 

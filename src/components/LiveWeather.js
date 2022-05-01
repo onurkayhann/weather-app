@@ -16,7 +16,7 @@ function LiveWeather({weatherData}) {
 
 
 return (
-  <div>
+  <div className="getDaily">
  {weatherData.daily && getDaily()}
   </div>
 )
