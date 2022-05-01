@@ -6,7 +6,7 @@
 
 Edit `.env` file and insert:
 
-- `REACT_APP_WEATHER_API_KEY = YOUR API KEY HERE`
+- `REACT_APP_API_KEY = YOUR API KEY HERE`
 - `REACT_APP_WEATHER_URL = https://api.openweathermap.org/data/2.5/onecall?`
 - `REACT_APP_WEATHER_ICON_URL = http://openweathermap.org/img/wn/`
 
