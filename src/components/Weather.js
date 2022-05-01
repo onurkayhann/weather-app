@@ -1,3 +1,6 @@
+import React from 'react';
+import LiveWeather from './LiveWeather';
+import '../App.css';
 
 function Weather({weatherData, imperial, metric}) {
 
@@ -19,16 +22,73 @@ function Weather({weatherData, imperial, metric}) {
 
 
 
-
-
-
   console.log(weatherData);
+
+ 
+
   return (
     <div className="app">
-    <p>{weatherData.timezone}</p>
-    </div>
-  );
 
-}
+    <div className="buttonContainer">
+      <button className="convertButton" onClick={metric}>Celsius</button>
+        <button className="convertButton" onClick={imperial}>Fahrenheit</button>
+      </div>
+    
+    <div className="weatherCard">
+    <p>{weatherData.timezone}</p>
+    
+    {weatherData.current ? <h1>{weatherData.current.temp.toFixed()}°</h1> : null}
+    {weatherData.current &&
+      <p>{weatherData.current.weather[0].main}</p>}
+      {weatherData.current && <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`}></img>}
+    </div>
+    
+
+      
+
+
+        {weatherData.timezone != undefined && (
+          <div className="section-1">
+
+            <div>
+            <p>Feels like</p>
+              {weatherData.current ? (
+                <p>{weatherData.current.feels_like.toFixed()}°</p>
+              ) : null} 
+            </div>
+
+            <div>
+            <p>Humidity</p>
+              {weatherData.current ? <p className="bold">{weatherData.current.humidity}%</p> : null}
+            </div>
+
+            <div>
+            <p>Wind Speed</p>
+              {weatherData.current ? (
+                <p>{weatherData.current.wind_speed.toFixed()} M/S</p>
+              ) : null}
+            </div>
+            <div>
+                <p>Sunrise:</p>
+                {weatherData.current &&  
+                <p>{new Date(weatherData.current.sunrise * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>}
+                <p>Sunset:</p>
+                {weatherData.current && 
+                <p>{new Date(weatherData.current.sunset * 1000).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>}
+                
+            </div>
+          </div>
+          
+        )}
+            
+            <div>
+              {weatherData.hourly && getHour()}
+            </div>
+          {weatherData && <LiveWeather weatherData={weatherData} />}
+      </div>      
+
+  )}
+    
+
 
 export default Weather;

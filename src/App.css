@@ -1,6 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap");
+@import "bootstrap/";
 
 body {
-  font-family: 'Recursive', sans-serif;
-  background: url('./assets/weather-app.jpg');
+  color: whitesmoke;
+  font-family: "Recursive", sans-serif;
+  background: url("./assets/weather-app.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow-y: scroll;
 }
+
+.weatherCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 5px auto;
+  margin-top: 10px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.section-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 5px auto;
+  margin-top: 10px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 30%;
+  margin: 5px auto;
+  margin-top: 10px;
+  border: 1px solid;
+  border-radius: 2px;
+}
+
+.convertButton {
+
+}
+
