@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap");
-@import "bootstrap/";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,10 +7,10 @@
 }
 
 body {
-  color: #fff;
-  font-family: "Recursive", sans-serif;
-  /* background: url("./assets/weather-app.jpg"); */
-  background: #43AFFC;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/weather-app.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -19,7 +18,9 @@ body {
 }
 
 .app {
+  display: row;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .weatherCard {
@@ -30,9 +31,9 @@ body {
   margin: 5px auto;
   margin-top: 10px;
   border: 1px solid;
-  color: #000;
-  background: #fff;
-   border: 2px solid #bfbfbf;
+  color: #26a65b;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+   border: 1px solid #bfbfbf;
   border-radius: 3px;
 }
 
@@ -43,23 +44,24 @@ body {
   width: 50%;
   margin: 5px auto;
   margin-top: 40px;
-  color: #000;
-  background: #fff;
-   border: 2px solid #bfbfbf;
+  color: #26a65b;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+   border: 1px solid #bfbfbf;
   border-radius: 3px;
 }
 
 .getHour {
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   width: 50%;
   margin: 5px auto;
   margin-top: 40px;
-  color: #000;
-  background: #fff;
+  color: #26a65b;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
   margin-top: 10px;
-   border: 2px solid #bfbfbf;
+   border: 1px solid #bfbfbf;
   border-radius: 3px;
 }
 
@@ -70,30 +72,39 @@ body {
   width: 50%;
   margin: 5px auto;
   margin-top: 40px;
-  color: #000;
-  background: #fff;
+  color: #26a65b;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
   margin-top: 10px;
-   border: 2px solid #bfbfbf;
+   border: 1px solid #bfbfbf;
   border-radius: 3px;
 }
 
 .buttonContainer {
-  color: #43AFFC;
-  background: #fff;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 30%;
+  justify-content: space-between;
+  width: 20%;
   margin: 5px auto;
   margin-top: 40px;
-  border: 2px solid #bfbfbf;
+  border: 1px solid #bfbfbf;
   border-radius: 3px;
 }
 
 .convertButton {
   color: #fff;
-background-color: #43AFFC;
-cursor: pointer;
-padding: 4px;
+  background-color: #1e824c;
+  cursor: pointer;
+  padding: 6px;
 }
 
+.weather-app {
+  font-size: 18px;
+  font-size: larger;
+  color: #1e824c;
+  font-weight: 600;
+}
+
+.weather-style {
+  color: #1e824c;
+}

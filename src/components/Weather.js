@@ -31,14 +31,14 @@ function Weather({weatherData, imperial, metric}) {
 
     <div className="buttonContainer">
       <button className="convertButton" onClick={metric}>Celsius</button>
-      <p>&#x2190;Weather App</p>
+      <p className="weather-app">&#x2190;Weather App</p>
         <button className="convertButton" onClick={imperial}>Fahrenheit</button>
       </div>
     
     <div className="weatherCard">
     <p>{weatherData.timezone}</p>
     
-    {weatherData.current ? <h1>{Math.round(weatherData.current.temp)}°</h1> : null}
+    {weatherData.current ? <h1 className="weather-style">{Math.round(weatherData.current.temp)}°</h1> : null}
     {weatherData.current &&
       <p>{weatherData.current.weather[0].main}</p>}
       {weatherData.current && <img src={`http://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png`}></img>}
@@ -54,7 +54,7 @@ function Weather({weatherData, imperial, metric}) {
             <div>
             <p>Pressure</p>
               {weatherData.current ? (
-                <p>{Math.round(weatherData.current.pressure)}°</p>
+                <p>{Math.round(weatherData.current.pressure)}</p>
               ) : null} 
             </div>
 
