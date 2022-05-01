@@ -23,6 +23,7 @@ View weather information for your current position wherever you are:
 - Temperature
 - Wind speed
 - Humidity
+- Pressure
 - Sunrise and sunset times
 - Get a weekly weather forecast for weather conditions 5 days ahead
 - Every three hours for the current day
