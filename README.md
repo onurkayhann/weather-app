@@ -3,7 +3,6 @@
 ### Get started:
 
 [Live Weather](https://weather-one.netlify.app/)
-[WeatherApp]=weather-one.netlify.app
 
 - Clone the project in your local folder and get started.
 
